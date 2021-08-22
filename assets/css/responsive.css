@@ -1,0 +1,118 @@
+/* mobile & tablet */
+@media (max-width: 1024px){
+    :root{
+        --navbar-height:0px;
+        --header-height:70px;
+    }
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    .header{
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+    .header__cart-list{
+        position: fixed;
+        top: var(--header-height);
+        width: 100%;
+        right: 0;
+        padding: 0 calc((100% - 1100px)/2);
+    }
+    .header__cart-list::after{
+        display: none;
+    }
+    .header__cart-item-name{
+        width: auto;
+        overflow: initial;
+        text-overflow: initial;
+        white-space: initial;
+    }
+    .app__container{
+        margin-top: calc(var(--header-height) + 46px);
+    }
+    .header__sort-bar{
+        display: flex;
+    }
+    .nav__bars-btn{
+        display: block;
+    }
+    .mobile-category{
+        display: block;
+    }
+    .app__content{
+        padding-top: 8px;
+    }
+}
+/* tablet */
+@media (min-width: 740px) and (max-width: 1024px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__cart{
+        width: 80px;
+        text-align: right;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -30px;
+        margin-right: -24px;
+    }
+}
+/* mobile */
+@media (max-width: 739px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .pagination-item{
+        margin: 0;
+    }
+    .app__content{
+        margin: 0 -4px;
+    }
+    .nav__bars-btn{
+        margin: 0 24px 0 12px;
+    }
+    .header-with-seacher{
+        justify-content: space-between;
+    }
+    .header__search{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        z-index: 1;
+        height: 46px;
+        padding: 0 8px;
+        display: none;
+        animation: mobileSearchSideIn linear 0.3s;
+    }
+    .header-with-mobile-search{
+        display: block;
+    }
+    @keyframes mobileSearchSideIn{
+        from {
+            top: calc(var(--header-height) / 2);
+            opacity: 0;
+        }
+        to {
+            top: var(--header-height);
+            opacity: 1;
+        }
+    }
+    .header__search-history{
+        top: calc(var(--header-height) - 20px);
+        left: 0;
+        width: 100%;
+        right: 0;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 0px;
+        margin-right: -24px;
+    }
+}
