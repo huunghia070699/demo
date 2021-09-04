@@ -35,6 +35,24 @@ function back() {
    registerElement.classList.add("hidden");
    loginElement.classList.add("hidden");
 }
+var divModal = document.querySelector(".modal");
+var divModalBody = document.querySelector(".modal__body");
+var loginElement = document.querySelector("#formLogin");
+var registerElement = document.querySelector("#formRegister");
+//use esc to back
+document.onkeyup = function(e){
+   if(e.which == 27)
+   {
+      divModal.classList.add('hidden');
+      registerElement.classList.add("hidden");
+      loginElement.classList.add("hidden");
+   }
+}
+//click outside to back
+divModal.addEventListener('click',back);
+divModalBody.onclick = function(e){
+   e.stopPropagation();
+}
 //ngăn chặn hành vi mặc định onblur khỏi ô tìm kiếm và lấy ra giá trị của element 
 var liElement = document.querySelectorAll('.header__search-history-items');
 var ulElement = document.querySelector('.header__search-history-list');
