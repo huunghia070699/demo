@@ -27,6 +27,7 @@ function registerSwitchLogin() {
    loginElement.classList.remove("hidden");
 }
 //back
+//use button to back
 function back() {
    var divModal= document.querySelector(".modal");
    var loginElement = document.querySelector("#formLogin");
@@ -48,7 +49,7 @@ document.onkeyup = function(e){
       loginElement.classList.add("hidden");
    }
 }
-//click outside to back
+//click outside div to back
 divModal.addEventListener('click',back);
 divModalBody.onclick = function(e){
    e.stopPropagation();
