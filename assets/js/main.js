@@ -76,15 +76,27 @@ categoryItems.forEach((item,index)=>{
    }
 })
 //btn filter
+// var homeFilterBtns = document.querySelectorAll(".home-filter__btn");
+// var homeFilterBtnLength = homeFilterBtns.length;
+// for(var i = 0; i < homeFilterBtnLength; i++){
+//    homeFilterBtns[i].onclick = function () {
+//       var homeFilterBtn = document.querySelector(".home-filter__btn.btn--primary");
+//       this.classList.add("btn--primary");
+//       homeFilterBtn.classList.remove("btn--primary");
+//    }
+// }
+// btn filter and title current
 var homeFilterBtns = document.querySelectorAll(".home-filter__btn");
-var homeFilterBtnLength = homeFilterBtns.length;
-for(var i = 0; i < homeFilterBtnLength; i++){
-   homeFilterBtns[i].onclick = function () {
-      var homeFilterBtn = document.querySelector(".home-filter__btn.btn--primary");
+var titleCurrents = document.querySelectorAll(".title-current");
+homeFilterBtns.forEach((homeFilterBtn,index)=>{
+   const titleCurrent = titleCurrents[index];
+   homeFilterBtn.onclick = function(){
+      document.querySelector(".home-filter__btn.btn--primary").classList.remove("btn--primary");
+      document.querySelector(".title-current.active").classList.remove("active");
       this.classList.add("btn--primary");
-      homeFilterBtn.classList.remove("btn--primary");
+      titleCurrent.classList.add("active");
    }
-}
+})
 //like product
 function likeProduct() {
    var preventA = document.querySelectorAll('.home-product-item');
