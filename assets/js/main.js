@@ -57,12 +57,13 @@ divModalBody.onclick = function(e){
 //ngăn chặn hành vi mặc định onblur khỏi ô tìm kiếm và lấy ra giá trị của element 
 var liElement = document.querySelectorAll('.header__search-history-items');
 var ulElement = document.querySelector('.header__search-history-list');
+var inputSearchElement = document.querySelector('.header__search-input');
 var liElementLength = liElement.length;
 ulElement.onmousedown = function (e) {
    e.preventDefault();
    for(var i = 0; i < liElementLength; i++){
       liElement[i].onclick = function (e){
-         console.log(e.target.innerText);
+         inputSearchElement.value = e.target.innerText;
       }
    }
 };
